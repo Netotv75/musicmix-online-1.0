@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>musicmix online.com</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: greenyellow;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.493);
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      padding: 10px;
+      background-color: #00aeff;
+      margin-bottom: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    li:hover {
+      background-color: #91ff00;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>musicmix online
+    </h1>
+    <ul id="playlist">
+      <li data-src="Belanova - Cada Que....mp3">belanova cada que</li>
+      <li data-src="Coldplay - Fix You.mp3">clodplay flix you</li>
+      <li data-src="Coldplay - Speed of Sound.mp3">clodplay speed of sound</li>
+      <li data-src="SHAKIRA - FIJACION ORAL, VOL 1 - 03 - LA TORTURA.mp3">shakira la tortura</li>
+      <li data-src="SHAKIRA - FIJACION ORAL, VOL 1 - 01 - EN TUS PUPILAS.mp3">shakira en tus popilas</li>
+      <li data-src="Belanova - Baila Mi Corazón.mp3">belanova baila mi corazon</li>
+      <li data-src="Belanova - Vestida De Azul.mp3">belanvoa vestida de azul</li>
+      <li data-src="Enrique Iglesias - El Perdedor (feat. Marco Antonio Solís).mp3">enrique iglesias el Perdedor feat.marco antonio solis</li>
+      <li data-src="Belanova - Rockstar.mp3">belanova rockstar</li>
+      <li data-src="Coldplay - Low.mp3">Coldplay Low</li>
+    </ul>
+    <audio id="audioPlayer" controls>
+      <source src="" type="audio/mpeg">
+      Tu navegador no soporta la reproducción de audio.
+    </audio>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const playlist = document.getElementById('playlist');
+      const audioPlayer = document.getElementById('audioPlayer');
+
+      playlist.addEventListener('click', function (e) {
+        if (e.target.tagName === 'LI') {
+          const songSrc = e.target.getAttribute('data-src');
+          audioPlayer.src = songSrc;
+          audioPlayer.play();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
